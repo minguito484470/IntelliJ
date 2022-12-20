@@ -105,8 +105,7 @@ public class Gester {
                         calculate(runningTotal);
                         break;
                     default:
-                        runningTotal = 0;
-                        calculate(runningTotal);
+                        JOptionPane.showMessageDialog(null,"Please select your order according to the menu!");
                         break;
                 }
             } while (flop);
