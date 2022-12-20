@@ -5,31 +5,47 @@ public class Gester {
     static int order = 0;
     static double runningTotal = 0;
     static double[] orderPrice = {210.00, 255.00, 220.00, 200.00, 130.00, 150.00, 225.00, 210.00, 140.00, 180.00};
-    static String[] menuOption = {"Blonde Café Latte for " + (String.format("%.2f" , orderPrice[0])) + " Php", "Caramel Macchiato for php " + orderPrice[1] + "Php", "Skinny Mocha for " + orderPrice[2] + "Php", "Hot Coffee for " + orderPrice[3] + "Php", "Café Americano for " + orderPrice[4] + "Php", "Café Latte for " + orderPrice[5], "Cappuccino for " + orderPrice[6] + "Php", "Dolce Latten for " + orderPrice[7] + "Php", "Creamy Iced Coffee for " + orderPrice[8] + "Php", "Iced Latte for " + orderPrice[9] + "Php"};
+    static String[] menuOption = {
+            "Blonde Café Latte for " + (String.format("%.2f", orderPrice[0])) + " Php",
+            "Caramel Macchiato for " + (String.format("%.2f", orderPrice[1])) + "Php",
+            "Skinny Mocha for " + (String.format("%.2f", orderPrice[2])) + "Php",
+            "Hot Coffee for " + (String.format("%.2f", orderPrice[3])) + "Php",
+            "Café Americano for " + (String.format("%.2f", orderPrice[4])) + "Php",
+            "Café Latte for " + (String.format("%.2f", orderPrice[5])) + "Php",
+            "Cappuccino for " + (String.format("%.2f", orderPrice[6])) + "Php",
+            "Dolce Latten for " + (String.format("%.2f", orderPrice[7])) + "Php",
+            "Creamy Iced Coffee for " + (String.format("%.2f", orderPrice[8])) + "Php",
+            "Iced Latte for " + (String.format("%.2f", orderPrice[9])) + "Php"
+    };
+
     public static void information(String name, String address) {
-        JOptionPane.showMessageDialog(null, "============================\n" + "Name: " + name + "\n" + "Address: " + address + "\n============================\n");
+        JOptionPane.showMessageDialog(null,
+                "============================\n" +
+                        "Name: " + name + "\n" +
+                        "Address: " + address +
+                        "\n============================\n");
     }
 
     public static double calculate(double orders) {
 
         int numOfCups = Integer.parseInt(JOptionPane.showInputDialog("How many cups you want to order: "));
         double totalAmmount = runningTotal * numOfCups;
-        while(true){
-            double cash = Double.parseDouble(JOptionPane.showInputDialog("Total amout Due: " + totalAmmount + "\nEnter Cash:"));
+        while (true) {
+            double cash = Double.parseDouble(JOptionPane.showInputDialog("Total amout Due: " + totalAmmount + "\n" +
+                                                                         "Enter Cash:"));
             double change = cash - totalAmmount;
             if (cash < totalAmmount) {
                 JOptionPane.showMessageDialog(null, "NOT ENOUGH CASH!", null, JOptionPane.ERROR_MESSAGE);
                 continue;
             } else {
                 String body =
-                        "Customer's Name: " + name + "\n" +
-                                "Ordered Item: " + menuOption[1]+ "\n" +
+                                "Customer's Name: " + name + "\n" +
+                                "Ordered Item: " + menuOption[1] + "\n" +
                                 "Number of Cups: " + numOfCups + "\n" +
-                                "Total Amount: "+ (String.format("%.2f", totalAmmount)) + "\n" +
-                                "Cash Received: "+ (String.format("%.2f", cash)) + "\n" +
-                                "Change: "+ (String.format("%.2f", change));
-
-                JOptionPane.showMessageDialog(null, body);
+                                "Total Amount: " + (String.format("%.2f", totalAmmount)) + "\n" +
+                                "Cash Received: " + (String.format("%.2f", cash)) + "\n" +
+                                "Change: " + (String.format("%.2f", change));
+                JOptionPane.showMessageDialog(null, body, "Your Order", JOptionPane.PLAIN_MESSAGE);
                 break;
             }
         }
@@ -41,23 +57,43 @@ public class Gester {
     }
 
 
-
     public static void main(String[] args) {
         boolean flop = true;
 
         // Getting the customer information
-        do {
+        while (true) {
             name = JOptionPane.showInputDialog("Enter your Full Name");
-        } while (name.equals(""));
+            if (name.matches(".*\\d.*") || name.equals("") || name.equals(" ")) {
+                JOptionPane.showMessageDialog(null, "Please enter customer's name properly!");
+                continue;
+            } else {
+                break;
+            }
+        }
+
         do {
             address = JOptionPane.showInputDialog("Enter your Address");
-        } while (address.equals(""));
+        } while (address.equals("") || address.equals(" "));
         information(name, address);
 
         // Menu
         try {
             do {
-                order = Integer.parseInt(JOptionPane.showInputDialog(null, "COLD\n" + "1 = " + menuOption[0] + "\n\n" + "2 = " + menuOption[1] + "\n\n3 = " + menuOption[2] + "\n\n4 = " + menuOption[3] + '\n' + "\nESPRESSO" + "\n\n5 = " + menuOption[4] + "\n\n6 = " + menuOption[5] + "\n\n7 = " + menuOption[6] + "\n\n8 = " + menuOption[7] + '\n' + "\nCOLD" + "\n\n9 = " + menuOption[8] + "\n\n10 = " + menuOption[9], "Deja Brew MENU", JOptionPane.PLAIN_MESSAGE));
+                order = Integer.parseInt(JOptionPane.showInputDialog(null,
+                        "COLD\n" +
+                                "1 = " + menuOption[0] + "\n\n" +
+                                "2 = " + menuOption[1] + "\n\n" +
+                                "3 = " + menuOption[2] + "\n\n" +
+                                "4 = " + menuOption[3] + '\n' +
+                                "\nESPRESSO" + "\n\n5 = " + menuOption[4] + "\n\n" +
+                                "6 = " + menuOption[5] + "\n\n" +
+                                "7 = " + menuOption[6] + "\n\n" +
+                                "8 = " + menuOption[7] + "\n\n" +
+                                "COLD" + "\n\n" +
+                                "9 = " + menuOption[8] + "\n\n" +
+                                "10 = " + menuOption[9] + "\n\n",
+                        "Deja Brew MENU",
+                        JOptionPane.PLAIN_MESSAGE));
 
                 // This area i used switch case because in my Calculations(method) my
                 // runningTotal variable doesn't have any value so i used switch
@@ -104,12 +140,12 @@ public class Gester {
                         calculate(runningTotal);
                         break;
                     default:
-                        JOptionPane.showMessageDialog(null,"Please select your order according to the menu!");
+                        JOptionPane.showMessageDialog(null, "Please select your order according to the menu!");
                         break;
                 }
             } while (flop);
         } catch (Exception E) {
-           //
+            //
         }
     }
 }
