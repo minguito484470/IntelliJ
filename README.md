@@ -1,1 +1,1 @@
-# IntelliJ repository
+# IntelliJ Repository
