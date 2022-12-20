@@ -14,7 +14,7 @@ public class BasicCRUDSample {
 
     public static void removeName() {
         System.out.println("\nWhat name you want to remove in the list?");
-        for(String names : names) {
+        for (String names : names) {
             System.out.println(names);
         }
         System.out.println("Enter the name here: ");
@@ -28,18 +28,18 @@ public class BasicCRUDSample {
         System.out.println("Names cleared successfully!");
     }
 
-    public static void showNames(){
-        if(names.isEmpty()){
+    public static void showNames() {
+        if (names.isEmpty()) {
             System.out.println("No records found!");
-        } else{
+        } else {
             System.out.println("\nCurrent List of Names");
-            for(String names : names) {
+            for (String names : names) {
                 System.out.println(names);
             }
         }
     }
 
-    public static void mainMenu(){
+    public static void mainMenu() {
         System.out.println("****************** MENU ******************");
         System.out.println("""
                 [A] Insert Name
@@ -83,7 +83,6 @@ public class BasicCRUDSample {
         while (true) {
             mainMenu();
         }
-
 
     }
 }
