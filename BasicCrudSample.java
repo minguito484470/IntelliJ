@@ -1,5 +1,4 @@
-import java.util.ArrayList;
-import java.util.Scanner;
+import java.util.*;
 
 public class BasicCrudSample {
 
@@ -40,50 +39,49 @@ public class BasicCrudSample {
         }
     }
 
-    public static void main(String[] args) {
-        while (true) {
-            System.out.println("****************** MENU ******************");
-            System.out.println("""
+    public static void mainMenu(){
+        System.out.println("****************** MENU ******************");
+        System.out.println("""
                 [A] Insert Name
                 [B] Remove Name
                 [C] Display Names
                 [D] Clear Names
                 [E] Exit""");
-            System.out.println("Enter your choice:");
-            String choice = sc.nextLine();
+        System.out.println("Enter your choice:");
+        String choice = sc.nextLine();
 
-            switch (choice.toUpperCase()) {
-                case "A" -> {
-                    addName();
-                    System.out.println("\n");
-                    continue;
-                }
-                case "B" -> {
-                    removeName();
-                    System.out.println("\n");
-                    ;
-                    continue;
-                }
-                case "C" -> {
-                    showNames();
-                    System.out.println("\n");
-                    continue;
-                }
-                case "D" -> {
-                    clearNames();
-                    System.out.println("\n");
-                    continue;
-                }
-                case "E" -> {
-                    System.out.println("Thank you for using the system!");
-                    System.exit(0);
-                    continue;
-                }
-                default -> {
-                    System.out.println("Invalid Input");
-                    System.out.println("\n");
-                }
+        switch (choice.toUpperCase()) {
+            case "A" -> {
+                addName();
+                System.out.println("\n");
             }
+            case "B" -> {
+                removeName();
+                System.out.println("\n");
+                ;
+            }
+            case "C" -> {
+                showNames();
+                System.out.println("\n");
+            }
+            case "D" -> {
+                clearNames();
+                System.out.println("\n");
+            }
+            case "E" -> {
+                System.out.println("Thank you for using the system!");
+                System.exit(0);
+            }
+            default -> {
+                System.out.println("Invalid Input");
+                System.out.println("\n");
+            }
+        }
+    }
+
+    public static void main(String[] args) {
+        while (true) {
+            mainMenu();
         }
 
 
