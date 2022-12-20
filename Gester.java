@@ -11,28 +11,27 @@ public class Gester {
     }
 
     public static double calculate(double orders) {
-//        double numOfCups = Double.parseDouble(JOptionPane.showInputDialog("How many cups you want to order: "));
-//        double totalAmmount = runningTotal * numOfCups;
-//        double cash = Double.parseDouble(JOptionPane.showInputDialog("Total amout Due: " + totalAmmount + "\nEnter Cash:"));
-//        double change = cash - totalAmmount;
 
         int numOfCups = Integer.parseInt(JOptionPane.showInputDialog("How many cups you want to order: "));
         double totalAmmount = runningTotal * numOfCups;
-        double cash = Double.parseDouble(JOptionPane.showInputDialog("Total amout Due: " + totalAmmount + "\nEnter Cash:"));
-        double change = cash - totalAmmount;
+        while(true){
+            double cash = Double.parseDouble(JOptionPane.showInputDialog("Total amout Due: " + totalAmmount + "\nEnter Cash:"));
+            double change = cash - totalAmmount;
+            if (cash < totalAmmount) {
+                JOptionPane.showMessageDialog(null, "NOT ENOUGH CASH!", null, JOptionPane.ERROR_MESSAGE);
+                continue;
+            } else {
+                String body =
+                        "Customer's Name: " + name + "\n" +
+                                "Ordered Item: " + menuOption[1]+ "\n" +
+                                "Number of Cups: " + numOfCups + "\n" +
+                                "Total Amount: "+ (String.format("%.2f", totalAmmount)) + "\n" +
+                                "Cash Received: "+ (String.format("%.2f", cash)) + "\n" +
+                                "Change: "+ (String.format("%.2f", change));
 
-        if (cash < totalAmmount) {
-            JOptionPane.showMessageDialog(null, "NOT ENOUGH CASH!", null, JOptionPane.ERROR_MESSAGE);
-        } else {
-            String body =
-                    "Customer's Name: " + name + "\n" +
-                    "Ordered Item: " + menuOption[1]+ "\n" +
-                    "Number of Cups: " + numOfCups + "\n" +
-                    "Total Amount: "+ (String.format("%.2f", totalAmmount)) + "\n" +
-                    "Cash Received: "+ (String.format("%.2f", cash)) + "\n" +
-                    "Change: "+ (String.format("%.2f", change));
-
-            JOptionPane.showMessageDialog(null, body);
+                JOptionPane.showMessageDialog(null, body);
+                break;
+            }
         }
         if (JOptionPane.showConfirmDialog(null, "Do you want to buy again?") == 1) {
             JOptionPane.showMessageDialog(null, "Thank for your purchasing from Deja Brew Coffee Shop!");
