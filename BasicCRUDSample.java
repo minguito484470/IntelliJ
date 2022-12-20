@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class BasicCrudSample {
+public class BasicCRUDSample {
 
     static Scanner sc = new Scanner(System.in);
     static ArrayList<String> names = new ArrayList<String>();
