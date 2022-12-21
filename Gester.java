@@ -1,7 +1,7 @@
 import javax.swing.*;
 
 public class Gester {
-    static String name, address,names;
+    static String name, address, names;
     static int order = 0;
     static double runningTotal = 0;
     static double[] orderPrice = {210.00, 255.00, 220.00, 200.00, 130.00, 150.00, 225.00, 210.00, 140.00, 180.00};
@@ -31,8 +31,13 @@ public class Gester {
         int numOfCups = Integer.parseInt(JOptionPane.showInputDialog("How many cups you want to order: "));
         double totalAmmount = runningTotal * numOfCups;
         while (true) {
-            double cash = Double.parseDouble(JOptionPane.showInputDialog("Total amout Due: " + totalAmmount + "\n" +
-                                                                         "Enter Cash:"));
+
+            String cashBody =
+                            "Ordered Item: " + menuOption[order - 1] + "\n" +
+                            "Number of Cups: " + numOfCups + "\n" +
+                            "Total amout Due: " + (String.format("%.2f",totalAmmount)) + "\n" +
+                            "Enter Cash:";
+            double cash = Double.parseDouble(JOptionPane.showInputDialog(cashBody));
             double change = cash - totalAmmount;
             if (cash < totalAmmount) {
                 JOptionPane.showMessageDialog(null, "NOT ENOUGH CASH!", null, JOptionPane.ERROR_MESSAGE);
@@ -40,7 +45,7 @@ public class Gester {
             } else {
                 String body =
                                 "Customer's Name: " + name + "\n" +
-                                "Ordered Item: " + menuOption[order-1] + "\n" +
+                                "Ordered Item: " + menuOption[order - 1] + "\n" +
                                 "Number of Cups: " + numOfCups + "\n" +
                                 "Total Amount: " + (String.format("%.2f", totalAmmount)) + "\n" +
                                 "Cash Received: " + (String.format("%.2f", cash)) + "\n" +
