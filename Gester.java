@@ -1,7 +1,7 @@
 import javax.swing.*;
 
 public class Gester {
-    static String name, address;
+    static String name, address,names;
     static int order = 0;
     static double runningTotal = 0;
     static double[] orderPrice = {210.00, 255.00, 220.00, 200.00, 130.00, 150.00, 225.00, 210.00, 140.00, 180.00};
