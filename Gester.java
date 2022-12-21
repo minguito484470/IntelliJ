@@ -29,17 +29,17 @@ public class Gester {
     public static double calculate(double orders) {
 
         int numOfCups = Integer.parseInt(JOptionPane.showInputDialog("How many cups you want to order: "));
-        double totalAmmount = runningTotal * numOfCups;
+        double totalAmount = runningTotal * numOfCups;
         while (true) {
 
             String cashBody =
                             "Ordered Item: " + menuOption[order - 1] + "\n" +
                             "Number of Cups: " + numOfCups + "\n" +
-                            "Total amout Due: " + (String.format("%.2f",totalAmmount)) + "\n" +
+                            "Total amout Due: " + (String.format("%.2f",totalAmount)) + "\n" +
                             "Enter Cash:";
             double cash = Double.parseDouble(JOptionPane.showInputDialog(cashBody));
-            double change = cash - totalAmmount;
-            if (cash < totalAmmount) {
+            double change = cash - totalAmount;
+            if (cash < totalAmount) {
                 JOptionPane.showMessageDialog(null, "NOT ENOUGH CASH!", null, JOptionPane.ERROR_MESSAGE);
                 continue;
             } else {
@@ -47,7 +47,7 @@ public class Gester {
                                 "Customer's Name: " + name + "\n" +
                                 "Ordered Item: " + menuOption[order - 1] + "\n" +
                                 "Number of Cups: " + numOfCups + "\n" +
-                                "Total Amount: " + (String.format("%.2f", totalAmmount)) + "\n" +
+                                "Total Amount: " + (String.format("%.2f", totalAmount)) + "\n" +
                                 "Cash Received: " + (String.format("%.2f", cash)) + "\n" +
                                 "Change: " + (String.format("%.2f", change));
                 JOptionPane.showMessageDialog(null, body, "Your Order", JOptionPane.PLAIN_MESSAGE);
