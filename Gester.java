@@ -38,6 +38,7 @@ public class Gester {
                             "Total amout Due: " + (String.format("%.2f",totalAmount)) + "\n" +
                             "Enter Cash:";
             double cash = Double.parseDouble(JOptionPane.showInputDialog(cashBody));
+
             double change = cash - totalAmount;
             if (cash < totalAmount) {
                 JOptionPane.showMessageDialog(null, "NOT ENOUGH CASH!", null, JOptionPane.ERROR_MESSAGE);
