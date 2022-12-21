@@ -40,7 +40,7 @@ public class Gester {
             } else {
                 String body =
                                 "Customer's Name: " + name + "\n" +
-                                "Ordered Item: " + menuOption[order] + "\n" +
+                                "Ordered Item: " + menuOption[order-1] + "\n" +
                                 "Number of Cups: " + numOfCups + "\n" +
                                 "Total Amount: " + (String.format("%.2f", totalAmmount)) + "\n" +
                                 "Cash Received: " + (String.format("%.2f", cash)) + "\n" +
