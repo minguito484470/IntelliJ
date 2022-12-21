@@ -7,15 +7,15 @@ public class Gester {
     static double[] orderPrice = {210.00, 255.00, 220.00, 200.00, 130.00, 150.00, 225.00, 210.00, 140.00, 180.00};
     static String[] menuOption = {
             "Blonde Café Latte for " + (String.format("%.2f", orderPrice[0])) + " Php",
-            "Caramel Macchiato for " + (String.format("%.2f", orderPrice[1])) + "Php",
-            "Skinny Mocha for " + (String.format("%.2f", orderPrice[2])) + "Php",
-            "Hot Coffee for " + (String.format("%.2f", orderPrice[3])) + "Php",
-            "Café Americano for " + (String.format("%.2f", orderPrice[4])) + "Php",
-            "Café Latte for " + (String.format("%.2f", orderPrice[5])) + "Php",
-            "Cappuccino for " + (String.format("%.2f", orderPrice[6])) + "Php",
-            "Dolce Latten for " + (String.format("%.2f", orderPrice[7])) + "Php",
-            "Creamy Iced Coffee for " + (String.format("%.2f", orderPrice[8])) + "Php",
-            "Iced Latte for " + (String.format("%.2f", orderPrice[9])) + "Php"
+            "Caramel Macchiato for " + (String.format("%.2f", orderPrice[1])) + " Php",
+            "Skinny Mocha for " + (String.format("%.2f", orderPrice[2])) + " Php",
+            "Hot Coffee for " + (String.format("%.2f", orderPrice[3])) + " Php",
+            "Café Americano for " + (String.format("%.2f", orderPrice[4])) + " Php",
+            "Café Latte for " + (String.format("%.2f", orderPrice[5])) + " Php",
+            "Cappuccino for " + (String.format("%.2f", orderPrice[6])) + " Php",
+            "Dolce Latten for " + (String.format("%.2f", orderPrice[7])) + " Php",
+            "Creamy Iced Coffee for " + (String.format("%.2f", orderPrice[8])) + " Php",
+            "Iced Latte for " + (String.format("%.2f", orderPrice[9])) + " Php"
     };
 
     public static void information(String name, String address) {
