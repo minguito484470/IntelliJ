@@ -89,8 +89,9 @@ public class Gester {
                                 "1 = " + menuOption[0] + "\n\n" +
                                 "2 = " + menuOption[1] + "\n\n" +
                                 "3 = " + menuOption[2] + "\n\n" +
-                                "4 = " + menuOption[3] + '\n' +
-                                "\nESPRESSO" + "\n\n5 = " + menuOption[4] + "\n\n" +
+                                "4 = " + menuOption[3] + "\n\n" +
+                                "ESPRESSO" + "\n\n" +
+                                "5 = " + menuOption[4] + "\n\n" +
                                 "6 = " + menuOption[5] + "\n\n" +
                                 "7 = " + menuOption[6] + "\n\n" +
                                 "8 = " + menuOption[7] + "\n\n" +
